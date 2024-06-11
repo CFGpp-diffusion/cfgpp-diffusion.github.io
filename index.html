@@ -1,0 +1,311 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>CFG++</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script
+  defer
+  src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+  ></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+  />
+
+  <style>
+  .eps_null {
+    color: rgb(53, 144, 243);
+  }
+  .eps_cfg {
+    color: rgb(231, 111, 81);
+  }
+  </style>
+
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">CFG++: Manifold-constrained Classifier Free Guidance For Diffusion Models</h1>
+            <div class="is-size-4 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.hj-chung.com/" target="_blank">Hyungjin Chung</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="https://jeongsol.dev/" target="_blank">Jeongsol Kim</a><sup>*</sup>,</span>
+                   <span class="author-block">
+                    <a href="https://geonyeong-park.github.io/" target="_blank">Geon Yeong Park</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                      <a href="https://www.linkedin.com/in/hyelin-nam-01ab631a3/" target="_blank">Hyelin Nam</a><sup>*</sup>,</span>
+                      <span class="author-block"> 
+                        <a href="https://scholar.google.com/citations?user=HNMjoNEAAAAJ&hl=en" target="_blank">Jong Chul Ye</a></span>
+            </div> 
+              <div class="is-size-4 publication-authors">
+                <span class="author-block" style="color:black"> KAIST </span>
+                  <!-- <br>Conferance name and year</span> -->
+                <span class="eql-cntrb" style="color:black"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+              </div>
+          
+                  <!-- ArXiv abstract Link -->
+                  <span class="link-block">
+                    <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    </ARXIV>
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                  </span>
+              
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                    </a>
+                  </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser Carousel-->
+<section class="hero teaser">
+
+  <div class="columns is-centered" style="margin-top:-40px">
+    <h1 class="is-size-3"> <mark> TLDR </mark></h1>
+  </div> 
+<!-- 
+  <div class="columns is-centered" style="margin-top:15px">
+  <img-comparison-slider style="width: 40%;" hover="hover" tabindex="0" class="rendered">
+  <img slot="first" src="static/images/test0.png" width="100%">
+  <img slot="second" src="static/images/test1.png" width="100%">
+  </img-comparison-slider>
+  </div>  -->
+
+  <div class="hero-body">
+    <div class="container">
+    
+      <div class="columns is-centered" style="margin-top:20px">
+        <h1 class="is-size-3"> T2I Generation Results</h1>
+        <h1 class="is-size-5", style="margin-top:13px"> &nbsp; (SD v1.5, SDXL) </h1>
+      </div>  
+
+      <div id="results-carousel" class="carousel results-carousel" style="margin-top:-20px">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/main_1.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          “kayak in the water, optical color, aerial view, rainbow”
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/main_2.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          "selfie of a woman and her lion cub on the plains"
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/main_3.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+         "woman sniper, wearing soviet army uniform, in snow ground"
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/main_4.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        "fisherman sitting on a tropical beach at sunset with bending palm trees"
+      </h2>
+    </div>
+
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/main_5.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        "A man wearing a suit is taking a self portrait with a camera"
+      </h2>
+    </div>
+
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/main_6.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        "A painter study hard to learn how to draw …"
+      </h2>
+    </div>
+
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Classifier-free guidance (CFG) is a fundamental tool in modern diffusion models for text-guided generation. Although effective, CFG has notable drawbacks. 
+            For instance, DDIM with CFG lacks invertibility, complicating image editing; furthermore, high guidance scales, essential for high-quality outputs, frequently result in issues like mode collapse. 
+            Contrary to the widespread belief that these are inherent limitations of diffusion models, this paper reveals that the problems actually stem from the off-manifold phenomenon associated with CFG, rather than the diffusion models themselves.
+            More specifically, inspired by the recent advancements of diffusion model-based inverse problem solvers (DIS),  we reformulate text-guidance as an inverse problem with a text-conditioned score matching loss, and
+            develop CFG++, a novel approach    that tackles the off-manifold challenges inherent in traditional CFG. CFG++ features a surprisingly simple fix to CFG, yet it offers significant improvements, including 
+            better sample quality for text-to-image  generation, invertibility, smaller guidance scales,  reduced mode collapse, etc. Furthermore, CFG++ enables seamless interpolation between unconditional and conditional sampling at lower guidance scales, 
+            consistently outperforming traditional CFG at all scales. 
+            Experimental results confirm that our method significantly enhances performance in 
+            text-to-image generation, DDIM inversion, editing, and solving inverse problems, suggesting a wide-ranging impact and potential applications in various fields that utilize text guidance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Method -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <img src="static/images/rs_algorithm.png" alt="rs_algorithm"/>
+          <p>
+            In CFG++, the renoising process after applying Tweedie’s formula should utilize the unconditional noise 
+            <span class="eps_null">$ \hat\epsilon_\varnothing $</span> instead of <span class="eps_cfg">$ \hat\epsilon^w_c $</span>. This surprisingly simple fix to the original CFG algorithm 
+            leads to smoother trajectory of generation. This improvement is also demonstrated in the following visualization of the discrete evolution of the posterior mean.
+          </p>
+          <img src="static/images/tweedie_progression.png" alt="tweedie_progression"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method -->
+
+
+<!-- Downstream Tasks -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+        <h2 class="title is-4"> 1. Inversion and Editing </h2>
+        <div class="content has-text-justified">
+
+        </div>
+
+        <h2 class="title is-4"> <br> 2. Text-conditioned Inverse Problems w/ <a href=" https://github.com/LituRout/PSLD/tree/main?tab=readme-ov-file" style="color:slateblue">PSLD</a></h2>
+        <div class="content has-text-justified">
+          <img src="static/images/ldis_main_v2.png" alt="tweedie_progression"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html> 
