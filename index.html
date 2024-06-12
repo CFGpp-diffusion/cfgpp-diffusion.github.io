@@ -264,8 +264,7 @@
           Although effective, CFG's reliance on high guidance scales presents notable drawbacks. 
           In response, we introduce simple solution to this seemingly inherent limitation: <strong>  CFG++ </strong> . 
           This innovation addresses the off-manifold issue inherent in CFG, <strong> thereby enabling effective utilization 
-          of small guidance scales (0 &lt; $ \lambda $ &lt; 1) </strong>.
-
+          of small guidance scales (0 &lt; $ \lambda $ &lt; 1) </strong>.å
          <br>
 
         <table style="width: 80%; margin-left:auto; margin-right:auto; text-align: center; 
@@ -362,38 +361,23 @@
       <h3 class="title is-5"> Kitten → Puppy / Pig </h3>
       <div class="columns is-centered">
       <img src="static/images/src_kitten.png" alt="src_kitten" style="width: 33%">
-      <img-comparison-slider style="width: 35%;" hover="hover" value="66" class="rendered">
+      <img-comparison-slider style="width: 60%;" hover="hover" value="66" class="rendered">
       
-      <img slot="first" src="static/images/edit_ours_puppy.png" width="512px" height="512px">
-      <img slot="second" src="static/images/edit_cfg_puppy.png" width="512px" height="512px">
+      <img slot="first" src="static/images/edit_cfgpp_both.png" width="1024px" height="512px">
+      <img slot="second" src="static/images/edit_cfg_both.png" width="1024px" height="512px">
       
       </img-comparison-slider>
-
-      <img-comparison-slider style="width: 35%;" hover="hover" tabindex="0" class="rendered">
-      
-      <img slot="first" src="static/images/edit_ours_pig.png" width="100%">
-      <img slot="second" src="static/images/edit_cfg_pig.png" width="100%">
-      </img-comparison-slider>
-
     </div>
 
     <h3 class="title is-5">  Zebra → Horse / Alpaca </h3>
       <div class="columns is-centered">
       <img src="static/images/src_zebra.png" alt="src_zebra" style="width: 33%">
-      <img-comparison-slider style="width: 35%;" hover="hover" tabindex="0" class="rendered">
+      <img-comparison-slider style="width: 60%;" hover="hover" tabindex="0" class="rendered">
       
-      <img slot="first" src="static/images/edit_ours_horse.png" width="100%">
-      <img slot="second" src="static/images/edit_cfg_horse.png" width="100%">
-      
+      <img slot="first" src="static/images/edit_cfgpp_both2.png" width="100%">
+      <img slot="second" src="static/images/edit_cfg_both2.png" width="100%">
       </img-comparison-slider>
-
-      <img-comparison-slider style="width: 35%;" hover="hover" tabindex="0" class="rendered">
-      
-      <img slot="first" src="static/images/edit_ours_alpaca.png" width="100%">
-      <img slot="second" src="static/images/edit_cfg_alpaca.png" width="100%">
-      </img-comparison-slider>
-
-    </div>
+      </div> 
 
     <div class="content has-text-justified" style="margin-bottom: 30px;">
       <p style="margin-top:5px; font-size: 18px;">
@@ -405,7 +389,7 @@
 
     <hr class="solid">
 
-    <h2 class="title is-4"> <br> 3. Text-conditioned Inverse Problems w/ <a href=" https://github.com/LituRout/PSLD/tree/main?tab=readme-ov-file" style="color:slateblue">PSLD</a></h2>
+    <h2 class="title is-4" style="margin-top:-20px;"> <br> 3. Text-conditioned Inverse Problems w/ <a href=" https://github.com/LituRout/PSLD/tree/main?tab=readme-ov-file" style="color:slateblue">PSLD</a></h2>
     <div class="content has-text-justified">
       <img src="static/images/ldis_main_v2.png" alt="ldis_main"/>
         <p style="margin-top:5px; margin-bottom: 10px; font-size: 18px;">
