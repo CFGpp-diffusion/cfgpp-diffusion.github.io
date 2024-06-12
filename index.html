@@ -80,6 +80,21 @@
   hr.solid {
   border-top: 2px solid #bbb;
   }
+
+  table, td, th {
+  border: 1px solid black;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
   </style>
 
 </head>
@@ -111,7 +126,18 @@
                 <span class="eql-cntrb" style="color:black"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
               </div>
           
-                  <!-- ArXiv abstract Link -->
+                  <!-- PDF Link -->
+                  <span class="link-block">
+                    <a href="static/pdfs/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    </ARXIV>
+                    <span class="icon">
+                      <i class="fas fa-file-pdf "></i>
+                    </span>
+                    <span>PDF</span>
+                  </a>
+                  </span>
+
                   <span class="link-block">
                     <a href="" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
@@ -143,14 +169,21 @@
 <!-- Teaser Carousel-->
 <section class="hero teaser">
 
-  <div class="columns is-centered" style="margin-top:-40px">
+  <div class="columns is-centered" style="margin-top:-20px">
     <h1 class="is-size-3"> 
-      <mark style="background: rgb(255, 255, 102)"> TL;DR: Using unconditional noise $ \hat\epsilon_\varnothing $ instead of 
-        $ \hat\epsilon^w_c $  </mark></h1>
+      <mark style="background: rgb(255, 255, 102)"> CFG++ fixes CFG's issues with lower guidance scales, 
+        <!-- We decrease CFG gudiance weight to 0 &lt; $ \lambda $ &lt; 1 by revising DDIM renoising step. -->
+        <!-- Change $ \hat\epsilon^w_c $ → $ \hat\epsilon_\varnothing $ in CFG renoising -->
   </div>
   <div class="columns is-centered" style="margin-top:-10px">
     <h1 class="is-size-3"> 
-      <mark style="background: rgb(255, 255, 102)"> in renoising process leads to smoother generation trajectory.</mark></h1>
+      <mark style="background: rgb(255, 255, 102)"> improving text-to-image quality and invertibility.
+        <!-- Revise DDIM renoising step  -->
+        <!-- ➜ smaller guidance scale 0 &lt; $ \lambda $ &lt; 1  better sampling & inversion -->
+        <!-- smooth generative trajectory, better sample quality, and superior inversion capability.</mark></h1> -->
+      <!-- <mark style="background: rgb(255, 255, 102)"> &#128073; smaller guidance scale 0 &lt; $ \lambda $ &lt; 1,  -->
+        <!-- better sample & inversion quality -->
+      </mark></h1>
   </div> 
 
   <div class="hero-body">
@@ -222,20 +255,51 @@
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-four-sixths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            Classifier-free guidance (CFG) is a fundamental tool in modern diffusion models for text-guided generation. Although effective, CFG has notable drawbacks. 
-            For instance, DDIM with CFG lacks invertibility, complicating image editing; furthermore, high guidance scales, essential for high-quality outputs, frequently result in issues like mode collapse. 
-            Contrary to the widespread belief that these are inherent limitations of diffusion models, this paper reveals that the problems actually stem from the off-manifold phenomenon associated with CFG, rather than the diffusion models themselves.
-            More specifically, inspired by the recent advancements of diffusion model-based inverse problem solvers (DIS),  we reformulate text-guidance as an inverse problem with a text-conditioned score matching loss, and
-            develop CFG++, a novel approach    that tackles the off-manifold challenges inherent in traditional CFG. CFG++ features a surprisingly simple fix to CFG, yet it offers significant improvements, including 
-            better sample quality for text-to-image  generation, invertibility, smaller guidance scales,  reduced mode collapse, etc. Furthermore, CFG++ enables seamless interpolation between unconditional and conditional sampling at lower guidance scales, 
-            consistently outperforming traditional CFG at all scales. 
-            Experimental results confirm that our method significantly enhances performance in 
-            text-to-image generation, DDIM inversion, editing, and solving inverse problems, suggesting a wide-ranging impact and potential applications in various fields that utilize text guidance.
-          </p>
+
+          <p style="font-size:18px;">
+          Classifier-free guidance(CFG) is a fundamental tool in modern diffusion models for text-guided generation. 
+          Although effective, CFG's reliance on high guidance scales presents notable drawbacks. 
+          In response, we introduce simple solution to this seemingly inherent limitation: <strong>  CFG++ </strong> . 
+          This innovation addresses the off-manifold issue inherent in CFG, <strong> thereby enabling effective utilization 
+          of small guidance scales (0 &lt; $ \lambda $ &lt; 1) </strong>.
+
+         <br>
+
+        <table style="width: 80%; margin-left:auto; margin-right:auto; text-align: center; 
+        margin-top:20px; margin-bottom:20px; background-color: rgb(245, 242, 237);" border="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="width: 30%; font-size: 22px;"></td>
+              <td style="width: 35%; font-size: 22px;"><strong>CFG 🥲</strong></td>
+              <td style="width: 35%; font-size: 22px;"><strong>CFG++ 😀</strong></td>
+            </tr>
+            <tr>
+              <td style="width: 30%; font-size: 20px; vertical-align:middle;">T2I Generation</td>
+              <td style="width: 35%; font-size: 20px; vertical-align:middle;">Mode Collapse and Saturation</td>
+              <td style="width: 35%; font-size: 20px; vertical-align:middle;">Better Sample Quality <br> & Adherence to text</td>
+            </tr>
+            <tr>
+              <td style="width: 30%; font-size: 20px; vertical-align:middle;">DDIM Inversion <br> w/ CFG(++)</td>
+              <td style="width: 35%; font-size: 20px; vertical-align:middle;">Breakdown</td>
+              <td style="width: 35%; font-size: 20px; vertical-align:middle;">Improves and enables better image editing</td>
+            </tr>
+            <tr>
+              <td style="width: 30%; font-size: 20px; vertical-align:middle;">PF-ODE trajectory</td>
+              <td style="width: 35%; font-size: 20px; vertical-align:middle;">Unnatural, Curved</td>
+              <td style="width: 35%; font-size: 20px; vertical-align:middle;">Smooth, Straighter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+
+        Experimental results confirm that our method significantly enhances performance in text-to-image generation, 
+        DDIM inversion, editing, and solving inverse problems, suggesting a wide-ranging impact and potential applications 
+        in various fields that utilize text guidance.
+      </p>
+
         </div>
       </div>
     </div>
@@ -247,11 +311,11 @@
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-four-sixths">
         <h2 class="title is-3">Method</h2>
         <div class="content has-text-justified">
           <img src="static/images/rs_algorithm.png" alt="rs_algorithm"/>
-          <p>
+          <p style=" font-size:18px;">
             In CFG++, the renoising process after applying Tweedie’s formula should utilize the unconditional noise 
             <span class="eps_null">$ \hat\epsilon_\varnothing $</span> instead of <span class="eps_cfg">$ \hat\epsilon^w_c $</span>. This surprisingly simple fix to the original CFG algorithm 
             leads to smoother trajectory of generation. This improvement is also demonstrated in the following visualization of the discrete evolution of the posterior mean.
@@ -269,13 +333,13 @@
 <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-four-sxiths">
         <h2 class="title is-3">Experimental Results</h2>
 
         <h2 class="title is-4">  1. T2I Generation </h2>
-        <div class="content has-text-justified" style="margin-top:-15px">
+        <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
           <img src="static/images/T2I_gen_w_interpolation.png" alt="t2i_gen_w_interpolation"/>
-          <p style="margin-top:5px; margin-bottom: 10px;">
+          <p style="margin-top:5px; margin-bottom: 10px; font-size:18px;">
             As demonstrated by the teaser images, our CFG++ method results in a smoother generation trajectory and superior quality.
             Additionally, we visualize multiple images generated by CFG++ as we increase the guidance scale $ \gamma $.
             The visualization shows a smooth transition from unconditional sampling towards highly conditional sampling. 
@@ -285,10 +349,10 @@
         <hr class="solid">
 
         <h2 class="title is-4"> 2. Inversion and Editing </h2>
-        <img src="static/images/inv_algorithm.png" alt="inv_algorithm" style="margin-bottom:10px">
+        <img src="static/images/inv_algorithm.png" alt="inv_algorithm" style="margin-bottom:20px">
         <img src="static/images/inversion.png" alt="inversion"/>
         <div class="content has-text-justified">
-          <p style="margin-top:5px; margin-bottom: 10px;">
+          <p style="margin-top:5px; margin-bottom: 30px; font-size: 18px;">
             We demonstrate the effect of CFG++ on the image inversion task. (a) Notably, DDIM inversion with CFG++ consistently reconstructs
             the source image across all guidance scales, whereas DDIM inversion with CFG fails to do so. (b) Quantitative results, including PSNR
             and RMSE, show a consistent improvement in reconstruction performance.
@@ -298,10 +362,10 @@
       <h3 class="title is-5"> Kitten → Puppy / Pig </h3>
       <div class="columns is-centered">
       <img src="static/images/src_kitten.png" alt="src_kitten" style="width: 33%">
-      <img-comparison-slider style="width: 35%;" hover="hover" tabindex="0" class="rendered">
+      <img-comparison-slider style="width: 35%;" hover="hover" value="66" class="rendered">
       
-      <img slot="first" src="static/images/edit_ours_puppy.png" width="100%">
-      <img slot="second" src="static/images/edit_cfg_puppy.png" width="100%">
+      <img slot="first" src="static/images/edit_ours_puppy.png" width="512px" height="512px">
+      <img slot="second" src="static/images/edit_cfg_puppy.png" width="512px" height="512px">
       
       </img-comparison-slider>
 
@@ -331,8 +395,8 @@
 
     </div>
 
-    <div class="content has-text-justified">
-      <p style="margin-top:5px; margin-bottom: 10px;">
+    <div class="content has-text-justified" style="margin-bottom: 30px;">
+      <p style="margin-top:5px; font-size: 18px;">
         The figures above compare image editing results using CFG and CFG++ followed by image inversion. 
         During the editing stage, a word in the source text is swapped with the target concept, and this modified text 
         is used as the condition for sampling. Our algorithm successfully works for both synthetic and real images.
@@ -344,7 +408,7 @@
     <h2 class="title is-4"> <br> 3. Text-conditioned Inverse Problems w/ <a href=" https://github.com/LituRout/PSLD/tree/main?tab=readme-ov-file" style="color:slateblue">PSLD</a></h2>
     <div class="content has-text-justified">
       <img src="static/images/ldis_main_v2.png" alt="ldis_main"/>
-        <p style="margin-top:5px; margin-bottom: 10px;">
+        <p style="margin-top:5px; margin-bottom: 10px; font-size: 18px;">
           We show that CFG++ enables the incorporation of text prompts into a standard diffusion inverse solvers. 
           Specifically, we focus on comparing the performance of PSLD combined with CFG and CFG++ in solving linear inverse problems.
           CFG++ consistently delivers high-quality reconstructions across all tasks.
