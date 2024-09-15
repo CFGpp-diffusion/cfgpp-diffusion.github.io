@@ -126,8 +126,8 @@
                 <span class="eql-cntrb" style="color:black"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
               </div>
           
-                  <!-- PDF Link 
-                  <span class="link-block">
+                  <!-- PDF Link -->
+                  <!-- <span class="link-block">
                     <a href="static/pdfs/CFGPP.pdf" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     </ARXIV>
@@ -335,7 +335,7 @@
       <div class="column is-four-sxiths">
         <h2 class="title is-3">Experimental Results</h2>
 
-        <h2 class="title is-4">  1. T2I Generation </h2>
+        <h2 class="title is-4">1. T2I Generation</h2>
         <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
           <img src="static/images/T2I_gen_w_interpolation.png" alt="t2i_gen_w_interpolation"/>
           <p style="margin-top:5px; margin-bottom: 10px; font-size:18px;">
@@ -344,66 +344,49 @@
             The visualization shows a smooth transition from unconditional sampling towards highly conditional sampling. 
           </p>
         </div>
-        
-        <hr class="solid">
 
+        <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
+          <img src="static/images/T2I_gen_lightning.png" alt="T2I_gen_lightning"/>
+          <p style="margin-top:5px; margin-bottom: 10px; font-size:18px;">
+            We find that the improvement gain from CFG++ is even more dramatic for distilled diffusion models such as SDXL-{turbo, lightning}.
+            We see significant boosts in the quality of the generated images, which is also depicted in the improvements seen in the above figure.
+          </p>
+        </div>
+        
         <h2 class="title is-4"> 2. Inversion and Editing </h2>
-        <img src="static/images/inv_algorithm.png" alt="inv_algorithm" style="margin-bottom:20px">
-        <img src="static/images/inversion.png" alt="inversion"/>
-        <div class="content has-text-justified">
+        <div class="content has-text-justified" style="margin-top:-15px; margin-bottom: 30px;">
+          <img src="static/images/inv_algorithm.png" alt="inv_algorithm" style="margin-bottom:20px">
+          <img src="static/images/inversion_v2.png" alt="inversion"/>  
           <p style="margin-top:5px; margin-bottom: 30px; font-size: 18px;">
             We demonstrate the effect of CFG++ on the image inversion task. (a) Notably, DDIM inversion with CFG++ consistently reconstructs
             the source image across all guidance scales, whereas DDIM inversion with CFG fails to do so. (b) Quantitative results, including PSNR
             and RMSE, show a consistent improvement in reconstruction performance.
           </p>
         </div>
-      
-      <h3 class="title is-5"> Kitten → Puppy / Pig </h3>
-      <div class="columns is-centered">
-      <img src="static/images/src_kitten.png" alt="src_kitten" style="width: 33%">
-      <img-comparison-slider style="width: 60%;" hover="hover" value="66" class="rendered">
-      
-      <img slot="first" src="static/images/edit_cfgpp_both.png" width="1024px" height="512px">
-      <img slot="second" src="static/images/edit_cfg_both.png" width="1024px" height="512px">
-      
-      </img-comparison-slider>
-    </div>
 
-    <h3 class="title is-5">  Zebra → Horse / Alpaca </h3>
-      <div class="columns is-centered">
-      <img src="static/images/src_zebra.png" alt="src_zebra" style="width: 33%">
-      <img-comparison-slider style="width: 60%;" hover="hover" tabindex="0" class="rendered">
-      
-      <img slot="first" src="static/images/edit_cfgpp_both2.png" width="100%">
-      <img slot="second" src="static/images/edit_cfg_both2.png" width="100%">
-      </img-comparison-slider>
+        <div class="content has-text-justified" style="margin-bottom: 30px;">
+          <img src="static/images/inversion_n_editing_overview.png" alt="t2i_gen_w_interpolation"/>
+          <p style="margin-top:5px; font-size: 18px;">
+            The figures above compare image editing results using CFG and CFG++ followed by image inversion. 
+            During the editing stage, a word in the source text is swapped with the target concept, and this modified text 
+            is used as the condition for sampling. Our algorithm successfully works for both synthetic and real images.
+          </p>
+        </div>
+        
+      <h2 class="title is-4" style="margin-top:-20px;"> <br> 3. Text-conditioned Inverse Problems w/ <a href=" https://github.com/LituRout/PSLD/tree/main?tab=readme-ov-file" style="color:slateblue">PSLD</a></h2>
+      <div class="content has-text-justified">
+        <img src="static/images/ldis_main_v2.png" alt="ldis_main"/>
+          <p style="margin-top:5px; margin-bottom: 10px; font-size: 18px;">
+            We show that CFG++ enables the incorporation of text prompts into a standard diffusion inverse solvers. 
+            Specifically, we focus on comparing the performance of PSLD combined with CFG and CFG++ in solving linear inverse problems.
+            CFG++ consistently delivers high-quality reconstructions across all tasks.
+          </p>
       </div> 
 
-    <div class="content has-text-justified" style="margin-bottom: 30px;">
-      <p style="margin-top:5px; font-size: 18px;">
-        The figures above compare image editing results using CFG and CFG++ followed by image inversion. 
-        During the editing stage, a word in the source text is swapped with the target concept, and this modified text 
-        is used as the condition for sampling. Our algorithm successfully works for both synthetic and real images.
-      </p>
-    </div>
-
-    <hr class="solid">
-
-    <h2 class="title is-4" style="margin-top:-20px;"> <br> 3. Text-conditioned Inverse Problems w/ <a href=" https://github.com/LituRout/PSLD/tree/main?tab=readme-ov-file" style="color:slateblue">PSLD</a></h2>
-    <div class="content has-text-justified">
-      <img src="static/images/ldis_main_v2.png" alt="ldis_main"/>
-        <p style="margin-top:5px; margin-bottom: 10px; font-size: 18px;">
-          We show that CFG++ enables the incorporation of text prompts into a standard diffusion inverse solvers. 
-          Specifically, we focus on comparing the performance of PSLD combined with CFG and CFG++ in solving linear inverse problems.
-          CFG++ consistently delivers high-quality reconstructions across all tasks.
-        </p>
-        </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End Method -->
-
 
 <!--BibTex citation -->
   <!-- <section class="section" id="BibTeX">
